@@ -23,27 +23,24 @@ class BlogManager
      * Get all posts with status 'published' from the database
      * @return array
      */
-    public function findAllPublishedPosts()
+    public function findAllProducts()
     {
-        $posts = [];
+        $products = [];
         $query = ""
-            . "SELECT post.*, user.name as author "
-            . "FROM post "
-            . "LEFT JOIN user ON post.id_user = user.id "
-            . "WHERE status > 0 "
-            . "ORDER BY post.date_created DESC";
+            . "SELECT *"
+            . "FROM product";
         $result = $this->db->query($query);
         if ($result) {
             // Cycle through results
             while ($row = $result->fetch_assoc()) {
-                $posts[] = [
+                $products[] = [
                     'id' => $row['id'],
-                    'title' => $row['title'],
-                    'content' => $row['content'],
-                    'author' => $row['author'],
-                    'id_user' => $row['id_user'],
-                    'date_created' => $row['date_created'],
-                    'tags' => '' //$row['firstname']
+                    'name' => $row['name'],
+                    'description' => $row['description'],
+                    'image' => $row['image'],
+                    'price' => $row['price'],
+                    'note' => $row['note'],
+                    'sale_price' => $row['sale_price']
                 ];
             }
             // Free result set
@@ -51,7 +48,7 @@ class BlogManager
         } else {
             echo($this->db->error);
         }
-        return $posts;
+        return $products;
     }
 
 

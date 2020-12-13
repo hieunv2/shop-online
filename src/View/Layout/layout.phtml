@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Test PHP Blog application without framework</title>
+    <title>Dan shop</title>
 
 
     <meta charset="utf-8">
@@ -12,6 +12,11 @@
     <link href="./css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/style.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./css/main_style.css" media="screen" rel="stylesheet" type="text/css">
+    <link
+        href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+        rel="stylesheet"
+    />
     <link href="./img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
     <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
@@ -25,91 +30,205 @@
 
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <!-- Page header -->
-        <div class="col-md-4">
-            <div class="app-caption"><a href="/"><img src="./img/Check24_Logo.png" height="60" alt="Check24 Logo" /></a> Blog Name</div>
+
+<header class="header">
+    <div class="header__background">
+        <div class="header__img">
+            <img src="./image/BG.png" alt="bg" />
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
 
+    <nav class="nav bd-grid">
+        <a href="#" class="nav__logo">
+            <img src="./image/logoicon.png" alt="#" />
+        </a>
+        <div class="nav__box" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Blog</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Contact us</a>
+                </li>
+            </ul>
+            <div class="nav__button">
+                <a href="#" class="nav__button-signup">Sign up</a>
+                <a href="" class="nav__button-signin">Sign in</a>
+            </div>
+        </div>
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="bx bx-menu"></i>
+        </div>
+    </nav>
 
+    <div class="header__information">
+        <div class="header__title">
+            <h2>Find Yourself Outside.</h2>
+        </div>
+        <div class="header__description">
+            Book unique camping experiences on over 300,000 campsites, cabins, RV
+            parks, public parks and more.
+        </div>
+        <a href="#" class="header__button"> Discover </a>
+    </div>
+</header>
 
+<main class="main bd-grid">
+    <section class="service">
+        <div class="service__item">
+            <div class="header_main">
+                <div class="container">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="col-lg-2 col-sm-3 col-3">
+                            <div class="logo_container">
+<!--                                <div class="logo">Tìm kiếm</div>-->
+                            </div>
+                        </div>
 
-
-
-
-
-
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-
-                    <ul class="nav navbar-nav">
-
-                        <?php
-                        if ($_SERVER['REQUEST_URI'] == "/")
-                            echo "<li class='active'><a href='#'>Home</a></li>";
-                        else
-                            echo "<li><a href='/'>Home</a></li>";
-
-                        if (!isset($_SESSION['adminid']) OR !$_SESSION['adminid'])
-                        {
-                            if ($_SERVER['REQUEST_URI'] == "/login")
-                                echo "<li class='active'><a href='#'>Login</a></li>";
-                            else
-                                echo "<li><a href='/login'>Login</a></li>";
-                        }
-
-
-
-                        if (isset($_SESSION['adminid']) AND $_SESSION['adminid']>0)
-                        {
-                            if ($_SERVER['REQUEST_URI'] == "/?action=addpost")
-                                echo "<li class='active'><a href='#'>Add entry</a></li>";
-                            else
-                                echo "<li><a href='/?action=addpost'>Add entry</a></li>";
-
-
-                            echo "<li><a href='/logout'>Logout</a></li>";
-                        }
-
-
-                        if ($_SERVER['REQUEST_URI'] == "/about")
-                            echo "<li class='active'><a href='#'>Contacts</a></li>";
-                        else
-                            echo "<li><a href='/about'>Contacts</a></li>";
-                        ?>
-                    </ul>
+                        <!-- Search -->
+                        <div class="col-lg-8 col-12 order-lg-2 order-3 text-lg-left text-right">
+                            <div class="header_search">
+                                <div class="header_search_content">
+                                    <div class="header_search_form_container">
+                                        <form action="search.php" class="header_search_form clearfix" method="GET">
+                                            <input type="search" required="required" class="header_search_input" placeholder="Search for products..." name="search">
+                                            <div class="custom_dropdown">
+                                                <div class="custom_dropdown_list">
+                                                    <span class="custom_dropdown_placeholder clc">All Categories</span>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                    <ul class="custom_list clc">
+                                                        <li><a class="clc" href="#">All Categories</a></li>
+                                                        <li><a class="clc" href="#">Computers</a></li>
+                                                        <li><a class="clc" href="#">Laptops</a></li>
+                                                        <li><a class="clc" href="#">Cameras</a></li>
+                                                        <li><a class="clc" href="#">Hardware</a></li>
+                                                        <li><a class="clc" href="#">Smartphones</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="header_search_button trans_300"><img src="./image/search.png" alt=""></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </nav>
-
-
-
-
-
-
-
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <!-- Breadcrumbs -->
-            <?php /* echo $this->pageBreadcrumbs()->render(); */ ?>
+    </section>
+
+    <section class="wrapper">
+
+        <?= $this->content; ?>
+
+
+    </section>
+
+    <section class="subscribe">
+        <div class="subscribe__bg">
+            <img src="./image/mask.png" alt="img" />
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <!-- Page content placeholder -->
-            <?= $this->content; ?>
+        <div class="subscribe__img">
+            <img src="./image/homeicon.png" alt="homeicon" />
         </div>
-    </div>
+        <form class="subscribe__form">
+            <div class="subscribe__title">
+                <h2>Let's Stay in Touch</h2>
+            </div>
+            <div class="subscribe__sub-title">
+                <p>
+                    Get travel planning ideas, helpful tips, and stories from our
+                    visitors delivered right to your inbox.
+                </p>
+            </div>
+            <div class="subscribe__input">
+                <div class="subscribe__box-input">
+                    <i class="bx bx-mail-send"></i>
+                    <input type="text" placeholder="Email Address" />
+                </div>
+                <button type="submit" class="subscribe__send">
+                    <i class="bx bxl-telegram"></i>
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--            <nav class="navbar navbar-default">-->
+<!--                <div class="container-fluid">-->
+<!---->
+<!--                    <ul class="nav navbar-nav">-->
+<!---->
+<!--                        --><?php
+//                        if ($_SERVER['REQUEST_URI'] == "/")
+//                            echo "<li class='active'><a href='#'>Home</a></li>";
+//                        else
+//                            echo "<li><a href='/'>Home</a></li>";
+//
+//                        if (!isset($_SESSION['adminid']) OR !$_SESSION['adminid'])
+//                        {
+//                            if ($_SERVER['REQUEST_URI'] == "/login")
+//                                echo "<li class='active'><a href='#'>Login</a></li>";
+//                            else
+//                                echo "<li><a href='/login'>Login</a></li>";
+//                        }
+//
+//
+//
+//                        if (isset($_SESSION['adminid']) AND $_SESSION['adminid']>0)
+//                        {
+//                            if ($_SERVER['REQUEST_URI'] == "/?action=addpost")
+//                                echo "<li class='active'><a href='#'>Add entry</a></li>";
+//                            else
+//                                echo "<li><a href='/?action=addpost'>Add entry</a></li>";
+//
+//
+//                            echo "<li><a href='/logout'>Logout</a></li>";
+//                        }
+//
+//
+//                        if ($_SERVER['REQUEST_URI'] == "/about")
+//                            echo "<li class='active'><a href='#'>Contacts</a></li>";
+//                        else
+//                            echo "<li><a href='/about'>Contacts</a></li>";
+//                        ?>
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </nav>-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--            <!-- Breadcrumbs -->-->
+<!--            --><?php ///* echo $this->pageBreadcrumbs()->render(); */ ?>
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--            <!-- Page content placeholder -->-->
+<!--            --><?//= $this->content; ?>
+<!--        </div>-->
+<!--    </div>-->
     <hr>
     <footer>
         <p>&copy; 2020 by Eugen Kaurov. All rights reserved. <a href="/about">Imprint (contacts)</a></p>
     </footer>
-</div>
+<!--</div>-->
 <?php /* = $this->inlineScript() */ ?>
+<script src="./js/main.js"></script>
 </body>
 </html>

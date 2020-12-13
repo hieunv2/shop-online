@@ -30,9 +30,9 @@ class BlogController implements ControllerInterface
 
     public function listAction($request)
     {
-        $posts = $this->blogManager->findAllPublishedPosts();
+        $products = $this->blogManager->findAllProducts();
         $View = new BlogView($this->blogManager);
-        $View->renderView($posts);
+        $View->renderView($products);
     }
 
 
