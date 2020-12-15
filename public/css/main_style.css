@@ -305,15 +305,13 @@ a, a:hover, a:visited, a:active, a:link
 }
 
 .cart_container {
-
 }
-
 
 .cart_count
 {
     position: absolute;
     bottom: -1px;
-    right: 20px;
+    right: -14px;
     width: 23px;
     height: 23px;
     background: #0e8ce4;
@@ -328,10 +326,10 @@ a, a:hover, a:visited, a:active, a:link
     color: #FFFFFF;
     transform: translateY(1px);
 }
+
 .cart_icon img
 {
-    width: 20%;
-    height: 20%;
+    width: 24px;
 }
 .cart_content
 {
@@ -495,6 +493,10 @@ select option
 /*********************************
 3.3 Main Navigation
 *********************************/
+
+
+
+
 
 .main_nav
 {

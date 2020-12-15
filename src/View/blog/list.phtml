@@ -1,43 +1,95 @@
+
+<?php
+include '../config/connect.php';
+?>
+
 <div class="wrapper__title">
 <!--    <img src="./image/Group 313.png" alt="title-icon" />-->
     <h2>Danh sách sản phẩm</h2>
 </div>
-<div class="wrapper__content">
-    <ul class="list-product">
 
-        <?php
-        $is_mini_mode = true;
-        $escapeHtml = 'htmlspecialchars';
-        $products = isset($variables) ? $variables : [];
+        <div>
+            <div class="row">
+                <div class="col-lg-3">
 
-        foreach ($products as $product)
-        {
-            if ($is_mini_mode)
-            {
-                ?>
-                <li class="product__item">
-                    <div class="product__thumbnail">
-                        <img src="./image/<?= $product['image'] ?>" alt="thumbnail" />
-                        <div class="product__love-icon">
-                            <i class="bx bx-heart"></i>
+                    <!-- Shop Sidebar -->
+                    <div class="shop_sidebar">
+                        <div class="sidebar_section">
+                            <div class="sidebar_title">Categories</div>
+                            <ul class="sidebar_categories">
+                                <?php
+                                $cats=mysqli_query($conn, "SELECT * FROM category WHERE status = 1 ");
+                                ?>
+                                <?php foreach ($cats as $c) :  ?>
+                                    <li><a href="category-product.php?id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <div class="sidebar_section filter_by_section">
+                            <div class="sidebar_title">Filter By</div>
+                            <div class="sidebar_subtitle">Price</div>
+                            <div class="filter_price">
+                                <div id="slider-range" class="slider_range"></div>
+                                <p>Range: </p>
+                                <p><input type="text" id="amount" class="amount" readonly style="border:0; font-weight:bold;"></p>
+                            </div>
+                        </div>
+                        <div class="sidebar_section">
+                            <div class="sidebar_subtitle brands_subtitle">Brands</div>
+                            <ul class="brands_list">
+                                <li class="brand"><a href="#">Apple</a></li>
+                                <li class="brand"><a href="#">Beoplay</a></li>
+                                <li class="brand"><a href="#">Google</a></li>
+                                <li class="brand"><a href="#">Meizu</a></li>
+                                <li class="brand"><a href="#">OnePlus</a></li>
+                                <li class="brand"><a href="#">Samsung</a></li>
+                                <li class="brand"><a href="#">Sony</a></li>
+                                <li class="brand"><a href="#">Xiaomi</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="product__price"><?= $product['price'] ?></div>
-                    <div class="product__detail">
-                        <h1 class="product__title"><?= $product['name'] ?></h1>
-                        <p class="product__description">
-                            <?= substr($product['description'] ,0 ,50) . '...' ?>
-                        </p>
-                        <a href="#" class="product__button">Buy now</a>
-                    </div>
-                </li>
-                <?php
-            } else
-            {
-                echo '<h1>' . $escapeHtml($postArray['title']) . '</h1>';
-            }
-        }
-        ?>
-    </ul>
+
+                </div>
+
+                <div class="col-lg-9">
+                    <ul class="list-product">
+
+                        <?php
+                        $is_mini_mode = true;
+                        $escapeHtml = 'htmlspecialchars';
+                        $products = isset($variables) ? $variables : [];
+
+                        foreach ($products as $product)
+                        {
+                            if ($is_mini_mode)
+                            {
+                                ?>
+                                <li class="product__item">
+                                    <div class="product__thumbnail">
+                                        <img src="./image/<?= $product['image'] ?>" alt="thumbnail" />
+                                        <div class="product__love-icon">
+                                            <i class="bx bx-heart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="product__price"><?= $product['price'] ?></div>
+                                    <div class="product__detail">
+                                        <h1 class="product__title"><?= $product['name'] ?></h1>
+                                        <p class="product__description">
+                                            <?= substr($product['description'] ,0 ,50) . '...' ?>
+                                        </p>
+                                        <a href="#" class="product__button">Buy now</a>
+                                    </div>
+                                </li>
+                                <?php
+                            } else
+                            {
+                                echo '<h1>' . $escapeHtml($postArray['title']) . '</h1>';
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+
     <a href="#" class="view-all">View all</a>
 </div>

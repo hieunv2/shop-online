@@ -12,11 +12,13 @@ include '../config/cart.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="./css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="./css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
+<!--    <link href="./css/bootstrap4/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">-->
+<!--    <link href="./css/bootstrap4/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">-->
+
+    <link href="./css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/style.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/main_style.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="./css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
     <link
         href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
         rel="stylesheet"
@@ -105,16 +107,12 @@ include '../config/cart.php';
     </div>
 </header>
 
-<main class="main bd-grid">
+<main class="bd-grid">
     <section class="service">
         <div class="service__item">
             <div class="header_main">
                 <div class="container">
                     <div class="row">
-                        <!-- Logo -->
-
-
-                        <!-- Search -->
                         <div class="col-lg-8 col-12 text-right">
                             <div class="header_search">
                                 <div class="header_search_content">
@@ -141,11 +139,20 @@ include '../config/cart.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-sm-3 col-3">
-                            <div class="logo_container">
-                               <div class="cart">
-                                    <div class="cart_container">
-                                        <div class="cart_icon">
+                        <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: end" class="wishlist_cart">
+                                <div style="display: flex; flex-direction: row; align-items: center; justify-content: end" class="wishlist">
+                                    <div class="wishlist_icon"><img  src="./image/heart.png" alt=""></div>
+                                    <div class="wishlist_content">
+                                        <div class="wishlist_text"><a href="#">Wishlist</a></div>
+                                        <div class="wishlist_count">115</div>
+                                    </div>
+                                </div>
+
+                                <!-- Cart -->
+                                <div class="cart">
+                                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: end">
+                                        <div style="position: relative;" class="cart_icon">
                                             <img src="./image/cart.png" alt="">
                                             <div class="cart_count"><span><?php echo tong_so_luong(); ?></span></div>
                                         </div>
@@ -156,7 +163,6 @@ include '../config/cart.php';
                                     </div>
                                 </div>
                             </div>
-                        </div>
                             </div>
                         </div>
                     </div>
