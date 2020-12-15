@@ -56,18 +56,12 @@ body {
   left: 0;
   border-radius: 0 0 100px 100px;
   overflow: hidden;
-  width: 100%;
-  height: 85%;
-  z-index: -1;
 }
 
+
 .header__background::before {
-  content: "";
-  display: block;
   width: 100%;
   height: 100%;
-  background-color: #3b3735;
-  opacity: 0.5;
   line-height: 0;
   position: absolute;
   top: 0;
@@ -77,19 +71,14 @@ body {
 .header__background img {
   width: 100%;
   height: 85vh;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 
 .header__information {
   text-align: center;
   width: 344px;
-  color: white;
   position: absolute;
   top: 36%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 .header__title {
@@ -105,26 +94,6 @@ body {
   line-height: 28px;
   padding: 0 20px;
   margin-bottom: 20px;
-}
-
-.header__button {
-  display: block;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #e76f51;
-  padding: 13px 63px;
-  border-radius: 25px;
-  color: white;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.header__button:hover {
-  -webkit-box-shadow: 0px 0px 36px #e76f51;
-  box-shadow: 0px 0px 36px #e76f51;
 }
 
 @media screen and (min-width: 768px) {
@@ -194,7 +163,8 @@ body {
 .nav__button a {
   display: block;
   text-align: center;
-  color: white;
+  color: black;
+  background-color: cornflowerblue;
   margin-bottom: 1rem;
 }
 
@@ -259,16 +229,22 @@ body {
     margin-bottom: 0;
   }
   .nav__button-signup {
+    color: #8d8d8d;
     padding: 13px 36px;
     margin-right: 10px;
+    border-radius: 25px;
   }
   .nav__button-signin {
+    color: #8d8d8d;
     padding: 13px 36px;
     border: 1px solid #fff;
     border-radius: 25px;
   }
+  .nav__button-signup:hover {
+    background-color: lightsalmon;
+  }
   .nav__button-signin:hover {
-    background-color: white;
+    background-color: lightsalmon;
   }
   .nav__toggle {
     display: none;
@@ -446,12 +422,6 @@ body {
   background-color: #8d8d8d12;
   padding: 13px 54px;
   border-radius: 25px;
-  display: block;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -459,7 +429,6 @@ body {
 .product__button:hover {
   background-color: #e76f51;
   color: white;
-  -webkit-box-shadow: 0px 0px 24px #e76f51;
   box-shadow: 0px 0px 24px #e76f51;
 }
 

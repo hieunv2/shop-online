@@ -83,6 +83,31 @@ class BlogManager
         return $post;
     }
 
+    public function findProductBanner()
+    {
+        $query = ""
+            . "SELECT * "
+            . "FROM product "
+            . "WHERE image like 'banner_product%'";
+        if ($result = $this->db->query($query)) {
+            $row = $result->fetch_assoc();
+            $post = [
+                'id' => $row['id'],
+                'name' => $row['name'],
+                'description' => $row['description'],
+                'image' => $row['image'],
+                'price' => $row['price'],
+                'note' => $row['note'],
+                'sale_price' => $row['sale_price']
+            ];
+            $result->close();
+        } else {
+            die($this->db->error);
+        }
+        return $post;
+    }
+
+
 
     public function findAllCommentsByPostId($id)
     {

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<?php
+include '../config/connect.php';
+include '../config/cart.php';
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,6 +16,7 @@
     <link href="./css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/style.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/main_style.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
     <link
         href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
         rel="stylesheet"
@@ -34,7 +38,7 @@
 <header class="header">
     <div class="header__background">
         <div class="header__img">
-            <img src="./image/BG.png" alt="bg" />
+            <img class="banner_image" src="./image/banner_background.jpg" alt="bg" />
         </div>
     </div>
 
@@ -57,10 +61,16 @@
                     <a href="#" class="nav__link">Contact us</a>
                 </li>
             </ul>
-            <div class="nav__button">
-                <a href="#" class="nav__button-signup">Sign up</a>
-                <a href="" class="nav__button-signin">Sign in</a>
+
+            <div class="row">
+
+                <div class="nav__button">
+                    <a href="#" class="nav__button-signup">Sign up</a>
+                    <a href="#" class="nav__button-signin">Sign in</a>
+                </div>
             </div>
+
+
         </div>
         <div class="nav__toggle" id="nav-toggle">
             <i class="bx bx-menu"></i>
@@ -69,13 +79,29 @@
 
     <div class="header__information">
         <div class="header__title">
-            <h2>Find Yourself Outside.</h2>
+                <?php
+                $pro=mysqli_query($conn,"SELECT * FROM product WHERE image like 'banner_product%'");
+                $pr=mysqli_fetch_assoc($pro);
+                ?>
+                <div class="banner_product_image"><img src="./image/<?= $pr['image'] ?>" alt=""></div>
+                <div class="header__description">
+                    <div class="banner_content">
+                        <h1 class="banner_text">new era of smartphones</h1>
+                        <div class="banner_price"><span>$ <?= $pr['price'] ?></span>$<?= $pr['sale_price'] ?></div>
+                        <div class="banner_product_name"><?= $pr['name'] ?></div>
+                        <div class="button banner_button"><a href="process-cart.php?id=<?= $pr['id'] ?>">Shop Now</a></div>
+                    </div>
+                </div>
         </div>
-        <div class="header__description">
-            Book unique camping experiences on over 300,000 campsites, cabins, RV
-            parks, public parks and more.
-        </div>
-        <a href="#" class="header__button"> Discover </a>
+
+<!--        <div class="header__title">-->
+<!--            <h2>Find Yourself Outside.</h2>-->
+<!--        </div>-->
+<!--        <div class="header__description">-->
+<!--            Book unique camping experiences on over 300,000 campsites, cabins, RV-->
+<!--            parks, public parks and more.-->
+<!--        </div>-->
+<!--        <a href="#" class="header__button"> Discover </a>-->
     </div>
 </header>
 
@@ -86,14 +112,10 @@
                 <div class="container">
                     <div class="row">
                         <!-- Logo -->
-                        <div class="col-lg-2 col-sm-3 col-3">
-                            <div class="logo_container">
-<!--                                <div class="logo">Tìm kiếm</div>-->
-                            </div>
-                        </div>
+
 
                         <!-- Search -->
-                        <div class="col-lg-8 col-12 order-lg-2 order-3 text-lg-left text-right">
+                        <div class="col-lg-8 col-12 text-right">
                             <div class="header_search">
                                 <div class="header_search_content">
                                     <div class="header_search_form_container">
@@ -115,6 +137,22 @@
                                             </div>
                                             <button type="submit" class="header_search_button trans_300"><img src="./image/search.png" alt=""></button>
                                         </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-3 col-3">
+                            <div class="logo_container">
+                               <div class="cart">
+                                    <div class="cart_container">
+                                        <div class="cart_icon">
+                                            <img src="./image/cart.png" alt="">
+                                            <div class="cart_count"><span><?php echo tong_so_luong(); ?></span></div>
+                                        </div>
+                                        <div class="cart_content">
+                                            <div class="cart_text"><a href="cart.php">Cart</a></div>
+                                            <div class="cart_price">$<?php echo tong_tien(); ?></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

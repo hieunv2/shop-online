@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/BlogManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BlogManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/BlogView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/BlogView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Layout/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layout/layout.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/blog/list.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/blog/list.phtml" afterDir="false" />
     </list>
@@ -36,12 +39,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="99" />
-    <option name="y" value="18" />
-    <option name="width" value="1401" />
-    <option name="height" value="822" />
   </component>
   <component name="ProjectId" id="1la9tUZDbs2Ey0MYXlgbXreilPr" />
   <component name="ProjectViewState">
@@ -90,7 +87,12 @@
       <workItem from="1599477525210" duration="1279000" />
       <workItem from="1607824553666" duration="6826000" />
       <workItem from="1607866709377" duration="1056000" />
-      <workItem from="1607869909902" duration="3482000" />
+      <workItem from="1607869909902" duration="8862000" />
+      <workItem from="1607922482925" duration="1162000" />
+      <workItem from="1607924558150" duration="222000" />
+      <workItem from="1607924821613" duration="1626000" />
+      <workItem from="1607961957689" duration="265000" />
+      <workItem from="1608000370506" duration="104000" />
     </task>
     <task id="LOCAL-00001" summary="#02 restructure + use namespaces">
       <created>1599130779406</created>
@@ -127,10 +129,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="#02 refactoring: folders naming, use interfaces, auto installing on the 1st run if server is configured,  sha512 password hashing" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="667" y="293" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608000437093">
+      <screen x="0" y="23" width="1920" height="962" />
+    </state>
+    <state x="667" y="293" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.962@0.23.1920.962" timestamp="1608000437093" />
     <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607827579719">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.962@0.23.1920.962" timestamp="1607827579719" />
+    <state x="758" y="416" key="NewPhpFileDialog" timestamp="1608000450430">
+      <screen x="0" y="23" width="1920" height="962" />
+    </state>
+    <state x="758" y="416" key="NewPhpFileDialog/0.23.1920.962@0.23.1920.962" timestamp="1608000450430" />
     <state x="353" y="55" key="SettingsEditor" timestamp="1607827868016">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
@@ -139,10 +149,15 @@
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="491" y="129" width="1720" height="762" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1920.962@0.23.1920.962" timestamp="1607870054308" />
-    <state x="569" y="197" width="781" height="614" key="find.popup" timestamp="1607872215461">
+    <state x="551" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1608000371989">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
-    <state x="569" y="197" width="781" height="614" key="find.popup/0.23.1920.962@0.23.1920.962" timestamp="1607872215461" />
+    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/0.23.1920.962@0.23.1920.962" timestamp="1608000371989" />
+    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1607922511527" />
+    <state x="569" y="197" width="781" height="614" key="find.popup" timestamp="1607878851151">
+      <screen x="0" y="23" width="1920" height="962" />
+    </state>
+    <state x="569" y="197" width="781" height="614" key="find.popup/0.23.1920.962@0.23.1920.962" timestamp="1607878851151" />
     <state x="541" y="23" width="838" height="962" key="search.everywhere.popup" timestamp="1607872046148">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
@@ -153,7 +168,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Model/BlogManager.php</url>
-          <line>138</line>
+          <line>163</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -31,8 +31,9 @@ class BlogController implements ControllerInterface
     public function listAction($request)
     {
         $products = $this->blogManager->findAllProducts();
+        $productBanner = $this->blogManager->findProductBanner();
         $View = new BlogView($this->blogManager);
-        $View->renderView($products);
+        $View->renderView($products, $productBanner);
     }
 
 
@@ -86,6 +87,4 @@ class BlogController implements ControllerInterface
         header("location: $route");
         exit;
     }
-
-
 }
