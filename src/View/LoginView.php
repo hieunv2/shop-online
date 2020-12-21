@@ -1,14 +1,14 @@
 <?php
 
-class BlogView
+
+class LoginView
 {
 
-    private $content; // content of page output
+    private $content1; // content of page output
 
 
-    public function __construct(BlogManager $converter)
+    public function __construct()
     {
-        $this->converter = $converter;
 
         $tmp = \debug_backtrace();
         $this->controller = \str_replace("controller", "", \strtolower($tmp[1]['class']));
@@ -18,7 +18,7 @@ class BlogView
 
     public function __destruct()
     {
-        include '../src/View/Layout/layout.phtml';
+        include '../src/View/Layout/noAuthLayout.phtml';
     }
 
 
@@ -29,13 +29,13 @@ class BlogView
         $this->content = \ob_get_clean();
     }
 
-    public function renderProducts($variables = null)
+
+    public function renderLogin()
     {
         \ob_start();
-        require "../src/View/blog/list.phtml";
-        $this->content = \ob_get_clean();
+        require "../src/View/auth/login.phtml";
+        $this->content1 = \ob_get_clean();
     }
-
 
     public function indexView()
     {

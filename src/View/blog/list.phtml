@@ -1,57 +1,52 @@
 
 <?php
 include '../config/connect.php';
+
+$id = null;
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}
+
 ?>
 
 <div class="wrapper__title">
 <!--    <img src="./image/Group 313.png" alt="title-icon" />-->
-    <h2>Danh sách sản phẩm</h2>
 </div>
-
         <div>
             <div class="row">
-                <div class="col-lg-3">
+
+                <div class="col-3">
 
                     <!-- Shop Sidebar -->
-                    <div class="shop_sidebar">
-                        <div class="sidebar_section">
-                            <div class="sidebar_title">Categories</div>
-                            <ul class="sidebar_categories">
+
+                        <div >
+                            <div >Categories</div>
+                            <ul >
                                 <?php
                                 $cats=mysqli_query($conn, "SELECT * FROM category WHERE status = 1 ");
                                 ?>
                                 <?php foreach ($cats as $c) :  ?>
-                                    <li><a href="category-product.php?id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
+                                    <?php if($c['id'] == $id) : ?> <li><a style="color: red" href="?action=products&&id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
+                                    <?php else: ?> <li><a href="?action=products&&id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-                        <div class="sidebar_section filter_by_section">
-                            <div class="sidebar_title">Filter By</div>
-                            <div class="sidebar_subtitle">Price</div>
-                            <div class="filter_price">
+                        <div >
+                            <div >Filter By</div>
+                            <div>Price</div>
+                            <div >
                                 <div id="slider-range" class="slider_range"></div>
                                 <p>Range: </p>
                                 <p><input type="text" id="amount" class="amount" readonly style="border:0; font-weight:bold;"></p>
                             </div>
                         </div>
-                        <div class="sidebar_section">
-                            <div class="sidebar_subtitle brands_subtitle">Brands</div>
-                            <ul class="brands_list">
-                                <li class="brand"><a href="#">Apple</a></li>
-                                <li class="brand"><a href="#">Beoplay</a></li>
-                                <li class="brand"><a href="#">Google</a></li>
-                                <li class="brand"><a href="#">Meizu</a></li>
-                                <li class="brand"><a href="#">OnePlus</a></li>
-                                <li class="brand"><a href="#">Samsung</a></li>
-                                <li class="brand"><a href="#">Sony</a></li>
-                                <li class="brand"><a href="#">Xiaomi</a></li>
-                            </ul>
-                        </div>
-                    </div>
 
                 </div>
 
-                <div class="col-lg-9">
+                <div class="col-9">
+                    <h2>Danh sách sản phẩm </h2>
+
                     <ul class="list-product">
 
                         <?php
@@ -59,31 +54,40 @@ include '../config/connect.php';
                         $escapeHtml = 'htmlspecialchars';
                         $products = isset($variables) ? $variables : [];
 
-                        foreach ($products as $product)
-                        {
-                            if ($is_mini_mode)
+                        if(count($products) == 0) {
+                            ?> <div>
+                                <h4 >Không có sản phẩm</h4>
+                            </div> <?php
+                        }else {
+                            foreach ($products as $product)
                             {
-                                ?>
-                                <li class="product__item">
-                                    <div class="product__thumbnail">
-                                        <img src="./image/<?= $product['image'] ?>" alt="thumbnail" />
-                                        <div class="product__love-icon">
-                                            <i class="bx bx-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div class="product__price"><?= $product['price'] ?></div>
-                                    <div class="product__detail">
-                                        <h1 class="product__title"><?= $product['name'] ?></h1>
-                                        <p class="product__description">
-                                            <?= substr($product['description'] ,0 ,50) . '...' ?>
-                                        </p>
-                                        <a href="#" class="product__button">Buy now</a>
-                                    </div>
-                                </li>
-                                <?php
-                            } else
-                            {
-                                echo '<h1>' . $escapeHtml($postArray['title']) . '</h1>';
+                                if ($is_mini_mode)
+                                {
+                                    ?>
+
+                                    <li class="product__item">
+                                        <a href="?action=product&id=<?= $product['id'] ?>">
+                                            <div class="product__thumbnail">
+                                                <img src="./image/<?= $product['image'] ?>" alt="thumbnail" />
+                                                <div class="product__love-icon">
+                                                    <i class="bx bx-heart"></i>
+                                                </div>
+                                            </div>
+                                            <div class="product__price"><?= $product['price'] ?></div>
+                                            <div class="product__detail">
+                                                <h1 class="product__title"><?= $product['name'] ?></h1>
+                                                <p class="product__description">
+                                                    <?= substr($product['description'] ,0 ,50) . '...' ?>
+                                                </p>
+                                                <a href="?action=cart&&quantity=1&&id=<?= $product['id'] ?>" class="product__button">Buy now</a>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <?php
+                                } else
+                                {
+                                    echo '<h1>' . $escapeHtml($product['title']) . '</h1>';
+                                }
                             }
                         }
                         ?>

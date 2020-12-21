@@ -1,0 +1,84 @@
+<?php
+//include '../config/cart.php';
+include_once '../config/cart.php';
+
+?>
+<div class="cart_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="cart_container">
+						<form action="/?action=updateCart" method="POST" accept-charset="utf-8">
+							<!-- <input type="hidden" name="action" value="update"> -->
+						<div class="cart_title">Shopping Cart</div>
+						<div class="cart_items">
+							<?php
+							$ghs=isset($_SESSION['cart']) ? $_SESSION['cart'] : []; ?>
+							<?php if (count($ghs)==0): ?>
+								<div class="alert alert-info">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<a href="shop.php" style="font-family: tahoma;">Bạn chưa có sản phẩm nào ! click vào đây để chọn sản phẩm</a>
+								</div>
+							<?php else: ?>
+								<?php foreach ($ghs as $gh) : ?>
+							<ul class="cart_list">
+								<li class="cart_item clearfix">
+									<div class="cart_item_image"><img src="./image/<?php echo $gh['image']; ?>" alt=""></div>
+									<div class="cart_item_info" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between" >
+										<div class="cart_item_name cart_info_col">
+											<div class="cart_item_title">Name</div>
+											<div class="cart_item_text"><?php echo $gh['name']; ?></div>
+										</div>
+<!-- 										<div class="cart_item_color cart_info_col">
+											<div class="cart_item_title">Color</div>
+											<div class="cart_item_text"><span style="background-color:#999999;"></span>Silver</div>
+										</div> -->
+										<div class="cart_item_quantity cart_info_col">
+											<div class="cart_item_title">Quantity</div>
+											<div class="cart_item_text">
+											<input type="number" name="quantity[]" id="quantity"  pattern="[1-10000]*" min="1" class="form-control" value="<?php echo $gh['quantity']; ?>" style="width: 60px;" onchange="enableBtn()" required>
+											<input type="hidden" name="id[]" value="<?php echo $gh['id']; ?>">
+
+											</div>
+										</div>
+										<div class="cart_item_price cart_info_col">
+											<div class="cart_item_title">Price</div>
+											<div class="cart_item_text">$<?php echo $gh['price']; ?></div>
+										</div>
+										<div class="cart_item_total cart_info_col">
+											<div class="cart_item_title">Total</div>
+											<div class="cart_item_text">$<?php echo $gh['quantity']*$gh['price']; ?></div>
+										</div>
+										<div class="cart_item_total cart_info_col">
+											<div class="cart_item_title">Option</div>
+											<div class="cart_item_text">
+												<a href="?action=deleteCart&&id=<?php echo $gh['id']; ?>" title="" class="btn btn-sm btn-danger">Xoá</a>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						<?php endforeach; ?>
+							<?php endif ?>
+						</div>
+
+
+						<!-- Order Total -->
+						<div class="order_total">
+							<div class="order_total_content text-md-right"">
+								<div class="order_total_title">Order Total:</div>
+								<div class="order_total_amount">$<?php echo tong_tien(); ?></div>
+							</div>
+						</div>
+
+						<div class="cart_buttons">
+							<button type="submit" class="btn btn-ligh btn-lg" style="margin-right: 24px;" id="update"><i class="far fa-edit"></i> Update your cart</button>
+							<a href="?action=order"><button type="button" class="button cart_button_checkout" <?php if (count($ghs)==0) {echo 'disabled';} ?>><i class="fab fa-amazon-pay"></i>Apply Now</button></a>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+?>

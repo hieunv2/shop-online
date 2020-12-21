@@ -30,7 +30,7 @@ class UserManager
     {
         $user = $this->findOneUserById($email, $password);
         if ($user) {
-            $_SESSION['adminid'] = $user['id'];
+            $_SESSION['login'] = $user;
             return true;
         } else {
             return false;
@@ -46,10 +46,10 @@ class UserManager
     public function findOneUserById($email, $password)
     {
         $query = ""
-            . "SELECT user.* "
-            . "FROM user "
-            . "WHERE user.email = '%s' AND user.password = '%s'";
-        $query = \sprintf($query, $this->db->real_escape_string($email), $this->getHash($password));
+            . "SELECT * "
+            . "FROM users "
+            . "WHERE email = '%s' AND password = '%s'";
+        $query = \sprintf($query, $this->db->real_escape_string($email), $this->db->real_escape_string($password));
         if ($result = $this->db->query($query)) {
             $row = $result->fetch_assoc();
             if (!$row) {
@@ -58,7 +58,10 @@ class UserManager
             $user = [
                 'id' => $row['id'],
                 'email' => $row['email'],
-                'name' => $row['name']
+                'name' => $row['name'],
+                'phone' => $row['phone'],
+                'address' => $row['address'],
+                'group_name' => $row['group_name']
             ];
             $result->close();
         } else {
@@ -74,7 +77,7 @@ class UserManager
      */
     public function logout()
     {
-        unset($_SESSION['adminid']);
+        unset($_SESSION['login']);
         return true;
     }
 
@@ -85,7 +88,7 @@ class UserManager
      */
     public function isLoggedIn()
     {
-        if (isset($_SESSION['adminid']) && $_SESSION['adminid']) return $_SESSION['adminid'];
+        if (isset($_SESSION['login']) && $_SESSION['login']) return $_SESSION['login'];
         return false;
     }
 

@@ -3,15 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CmsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/BlogManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BlogManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/UserManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/BlogView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/BlogView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Layout/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layout/layout.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/auth/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/auth/login.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/blog/list.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/blog/list.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/blog/post.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/blog/post.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/View/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -62,11 +68,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SCSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/image" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/View/blog" />
+      <recent name="$PROJECT_DIR$/src/View/cart" />
       <recent name="$PROJECT_DIR$/public/css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/View/admin" />
+      <recent name="$PROJECT_DIR$/public/js" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/public/image" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -92,7 +104,10 @@
       <workItem from="1607924558150" duration="222000" />
       <workItem from="1607924821613" duration="1626000" />
       <workItem from="1607961957689" duration="265000" />
-      <workItem from="1608000370506" duration="104000" />
+      <workItem from="1608000370506" duration="8553000" />
+      <workItem from="1608193917047" duration="449000" />
+      <workItem from="1608260532774" duration="12055000" />
+      <workItem from="1608472947547" duration="32648000" />
     </task>
     <task id="LOCAL-00001" summary="#02 restructure + use namespaces">
       <created>1599130779406</created>
@@ -133,14 +148,20 @@
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="667" y="293" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.962@0.23.1920.962" timestamp="1608000437093" />
-    <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607827579719">
+    <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608523114329">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
-    <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.962@0.23.1920.962" timestamp="1607827579719" />
-    <state x="758" y="416" key="NewPhpFileDialog" timestamp="1608000450430">
+    <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.962@0.23.1920.962" timestamp="1608475627560" />
+    <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608523114329" />
+    <state x="673" y="270" key="NewPhpClassDialog" timestamp="1608262225042">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
-    <state x="758" y="416" key="NewPhpFileDialog/0.23.1920.962@0.23.1920.962" timestamp="1608000450430" />
+    <state x="673" y="270" key="NewPhpClassDialog/0.23.1920.962@0.23.1920.962" timestamp="1608262225042" />
+    <state x="758" y="416" key="NewPhpFileDialog" timestamp="1608491657071">
+      <screen x="0" y="23" width="1920" height="962" />
+    </state>
+    <state x="758" y="416" key="NewPhpFileDialog/0.23.1920.962@0.23.1920.962" timestamp="1608473275883" />
+    <state x="758" y="416" key="NewPhpFileDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608491657071" />
     <state x="353" y="55" key="SettingsEditor" timestamp="1607827868016">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
@@ -149,29 +170,23 @@
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="491" y="129" width="1720" height="762" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1920.962@0.23.1920.962" timestamp="1607870054308" />
-    <state x="551" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1608000371989">
+    <state x="100" y="123" width="1720" height="762" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608273966725">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
-    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/0.23.1920.962@0.23.1920.962" timestamp="1608000371989" />
+    <state x="100" y="123" width="1720" height="762" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.962@0.23.1920.962" timestamp="1608273966725" />
+    <state x="551" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1608473017256">
+      <screen x="0" y="23" width="1920" height="962" />
+    </state>
+    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/0.23.1920.962@0.23.1920.962" timestamp="1608473017256" />
     <state x="551" y="298" key="com.intellij.ide.util.TipDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1607922511527" />
     <state x="569" y="197" width="781" height="614" key="find.popup" timestamp="1607878851151">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="569" y="197" width="781" height="614" key="find.popup/0.23.1920.962@0.23.1920.962" timestamp="1607878851151" />
-    <state x="541" y="23" width="838" height="962" key="search.everywhere.popup" timestamp="1607872046148">
+    <state x="541" y="23" width="838" height="962" key="search.everywhere.popup" timestamp="1608517822399">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
-    <state x="541" y="23" width="838" height="962" key="search.everywhere.popup/0.23.1920.962@0.23.1920.962" timestamp="1607872046148" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Model/BlogManager.php</url>
-          <line>163</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="541" y="23" width="838" height="962" key="search.everywhere.popup/0.23.1920.962@0.23.1920.962" timestamp="1608274602977" />
+    <state x="541" y="23" width="838" height="962" key="search.everywhere.popup/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608517822399" />
   </component>
 </project>

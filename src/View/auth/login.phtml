@@ -1,63 +1,104 @@
-<h1>Please login to add new post</h1>
-<div class="row">
-
-    <div class="col-md-8">
-
-
-        For the test sake input login <b>eugene.kaurov@gmail.com</b> and password <b>123</b>
-        <?php
-        if (isset($_REQUEST['error']) AND $_REQUEST['error']) echo "<br /><q style='color:red'>Credentials are incorrect</q>";
-
-
-
-        /*
-
-
-
-        <form name="loginform" id="loginform" action="/?action=loginsubmitted" method="post">
-            <p>
-                <label for="user_login">Email<br>
-                    <input type="email" name="email" id="user_login" aria-describedby="login_error" class="input" value="" size="20"></label>
-            </p>
-            <p>
-                <label for="user_pass">Password<br>
-                    <input type="password" name="password" id="user_pass" aria-describedby="login_error" class="input" value="" size="20"></label>
-            </p>
-            <p class="submit">
-                <input type="submit" name="wp-submit" id="wp-submit" class="btn btn-default" value="Login">
-
-
-            </p>
-        </form>
-
-        */
-        ?>
-
-
-
-        <form class="form-horizontal" action="/?action=loginsubmitted" method="post">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+<div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Đăng nhập</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Đăng kí</label>
+        <div class="login-form">
+            <form class="sign-in-htm" action="/?action=loginsubmitted" method="post">
+                <div class="group">
+                    <label for="user-name-signin" class="label">Tên đăng nhập</label>
+                    <input tyle="email" name="email"  type="text" class="input">
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="password">Password:</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                <div class="group">
+                    <label for="pass-type-signin" class="label">Mật khẩu</label>
+                    <input  name="password"  type="password" class="input" data-type="password">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span> Nhớ tài khoản</label>
                 </div>
-            </div>
-        </form>
+                <div class="group">
+                    <input type="submit" class="button" value="Đăng nhập">
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <a href="#forgot">Quên mật khẩu?</a>
+                </div>
+            </form>
+            <form class="sign-up-htm" action="/?action=register" method="post">
+                <div class="group">
+                    <label for="username" class="label">Tên hiển thị</label>
+                    <input id="name" name="name" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="username" class="label">Tên đăng nhập</label>
+                    <input id="username" name="username" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="password" class="label">Mật khẩu</label>
+                    <input name="password" type="password"  class="input" data-type="password">
+                </div>
+                <div class="group">
+                    <label for="email" class="label">Địa chỉ Email</label>
+                    <input name="email" type="email" class="input">
+                </div>
+                <div class="group">
+                    <label for="phone" class="label">Số điện thoại</label>
+                    <input id="phone"  name="phone" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="address" class="label">Địa chỉ</label>
+                    <input name="address" type="text" class="input">
+                </div>
 
-
-
-
+                <div class="group">
+                    <input type="submit" class="button" value="Đăng kí" >
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <a for="tab-1">Đã có tài khoản?</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+<script>
+
+    //Lay ten dang nhap
+    function getUserNameSignIn(val) {
+        document.getElementById("user-name-signin").innerText = val;
+        console.log(val)
+        ;
+    }
+    //Lay mat khau dang nhap
+    function getPasswordSignIn(val){
+        document.getElementById("pass-type-signin").innerText=val;
+        console.log(val)
+    }
+    //SUBMIT DAng nhap va mat khau
+    function submitFormSignIn(){
+        alert("form da submit")
+    }
+    //lay ten dang ki
+    function getUserNameSignUp(val){
+        document.getElementById("user-name-signup").innerText = val;
+        console.log(val)
+    }
+    //lay mat khau dang ky
+    function getPasswordSignUp(val){
+        document.getElementById("pass-type-signup").innerText=val;
+        console.log(val)
+    }
+    //lay dia chi Email
+    function getEmailAdress(val){
+        document.getElementById("email-address").innerText=val;
+        console.log(val)
+    }
+    //lay dia chi Email
+    function getPhoneNumber(val){
+        document.getElementById("phone-number").innerText=val;
+        console.log(val)
+    }
+    //Submit Form đăng kí
+
+</script>

@@ -1,18 +1,19 @@
 <?php
 
-class BlogView
+class CartView
 {
 
     private $content; // content of page output
 
 
-    public function __construct(BlogManager $converter)
+    public function __construct(CartManager $converter)
     {
         $this->converter = $converter;
 
         $tmp = \debug_backtrace();
         $this->controller = \str_replace("controller", "", \strtolower($tmp[1]['class']));
         $this->action = \str_replace("action", "", \strtolower($tmp[1]['function']));
+
     }
 
 
@@ -29,13 +30,29 @@ class BlogView
         $this->content = \ob_get_clean();
     }
 
-    public function renderProducts($variables = null)
+    public function renderOrder()
     {
         \ob_start();
-        require "../src/View/blog/list.phtml";
+        require "../src/View/order/order.phtml";
         $this->content = \ob_get_clean();
     }
 
+
+    public function renderLogin()
+    {
+        \ob_start();
+        require "../src/View/auth/login.phtml";
+        $this->content = \ob_get_clean();
+    }
+
+
+
+    public function renderCart()
+    {
+        \ob_start();
+        require "../src/View/{$this->controller}/cart.phtml";
+        $this->content = \ob_get_clean();
+    }
 
     public function indexView()
     {

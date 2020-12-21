@@ -16,6 +16,10 @@
     .container {
         max-width: 720px;
     }
+    .flex-md-row {
+        -ms-flex-direction: row !important;
+        flex-direction: row !important;
+    }
 }
 
 @media (min-width: 992px) {
@@ -48,9 +52,7 @@
 }
 
 .col {
-    -ms-flex-preferred-size: 0;
     flex-basis: 0;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 100%;
 }
@@ -918,7 +920,6 @@
 }
 
 
-
 .align-items-center {
     -ms-flex-align: center !important;
     align-items: center !important;
@@ -928,4 +929,3 @@
     -ms-flex-pack: end !important;
     justify-content: flex-end !important;
 }
-

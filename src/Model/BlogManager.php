@@ -51,6 +51,42 @@ class BlogManager
         return $products;
     }
 
+    public function findAllProductsByCategory($id,$name)
+    {
+        $products = [];
+      if($id){
+          $query = ""
+              . "SELECT * "
+              . "FROM product "
+              . "WHERE category_id = '$id' AND name LIKE '%$name%'";
+      } else {
+          $query = ""
+              . "SELECT * "
+              . "FROM product "
+              . "WHERE name LIKE '%$name%'";
+      }
+        $result = $this->db->query($query);
+        if ($result) {
+            // Cycle through results
+            while ($row = $result->fetch_assoc()) {
+                $products[] = [
+                    'id' => $row['id'],
+                    'name' => $row['name'],
+                    'description' => $row['description'],
+                    'image' => $row['image'],
+                    'price' => $row['price'],
+                    'note' => $row['note'],
+                    'sale_price' => $row['sale_price']
+                ];
+            }
+            // Free result set
+            $result->close();
+        } else {
+            echo($this->db->error);
+        }
+        return $products;
+    }
+
 
     /**
      * Get one post by it's ID
@@ -60,21 +96,20 @@ class BlogManager
     public function findOnePostById($id)
     {
         $query = ""
-            . "SELECT post.*, user.name as author "
-            . "FROM post "
-            . "LEFT JOIN user ON post.id_user = user.id "
-            . "WHERE post.id = '%s'";
+            . "SELECT * "
+            . "FROM product "
+            . "WHERE id = '%s'";
         $query = sprintf($query, $this->db->real_escape_string($id));
         if ($result = $this->db->query($query)) {
             $row = $result->fetch_assoc();
             $post = [
                 'id' => $row['id'],
-                'title' => $row['title'],
-                'content' => $row['content'],
-                'author' => $row['author'],
-                'date_created' => $row['date_created'],
-                'comment' => $this->findAllCommentsByPostId($row['id']),
-                'tags' => '' //$row['firstname']
+                'name' => $row['name'],
+                'description' => $row['description'],
+                'image' => $row['image'],
+                'price' => $row['price'],
+                'note' => $row['note'],
+                'sale_price' => $row['sale_price']
             ];
             $result->close();
         } else {
@@ -153,27 +188,4 @@ class BlogManager
             die($this->db->error);
         }
     }
-
-
-    public function addComment($name, $content, $post_id, $email = "", $url = "")
-    {
-        $query = "
-            INSERT INTO comment (
-                `post_id`, `content`, `author`, `author_email`, `author_url`, `date_created` 
-            ) 
-            VALUES ('%d', '%s', '%s', '%s', '%s', NOW())";
-        $query = \sprintf($query, $this->db->real_escape_string($post_id),
-            $this->db->real_escape_string($content),
-            $this->db->real_escape_string($name),
-            $this->db->real_escape_string($email),
-            $this->db->real_escape_string($url));
-//        echo $query; die();
-        if ($result = $this->db->query($query)) {
-            return true;
-        } else {
-            die($this->db->error);
-        }
-    }
-
-
 }

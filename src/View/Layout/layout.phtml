@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <?php
+ob_start();
 include '../config/connect.php';
-include '../config/cart.php';
+include_once '../config/cart.php';
+$id = null;
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}
 ?>
 <html lang="en">
 <head>
@@ -14,25 +19,23 @@ include '../config/cart.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--    <link href="./css/bootstrap4/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">-->
 <!--    <link href="./css/bootstrap4/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">-->
-
     <link href="./css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/style.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/main_style.css" media="screen" rel="stylesheet" type="text/css">
-    <script src="./js/jquery-3.3.1.min.js"></script>
     <link
         href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
         rel="stylesheet"
     />
-    <link href="./img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-    <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <link href="./fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
 
+    <link href="./img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <script type="text/javascript" src="./js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/product_custom.js"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=tzzh9mce5uxzm7y4cnx1062zf4p6gkf6ggg9jgvf61dnv98w"></script>
     <script src="https://cdn.tiny.cloud/1/tzzh9mce5uxzm7y4cnx1062zf4p6gkf6ggg9jgvf61dnv98w/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
-
-
-
 
 </head>
 <body>
@@ -45,31 +48,51 @@ include '../config/cart.php';
     </div>
 
     <nav class="nav bd-grid">
-        <a href="#" class="nav__logo">
+        <a href="/" class="nav__logo">
             <img src="./image/logoicon.png" alt="#" />
         </a>
         <div class="nav__box" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Home</a>
+                    <a href="/" class="nav__link">Trang chủ</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Blog</a>
+                    <a href="#" class="nav__link">Bài viết</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">About</a>
+                    <a href="#" class="nav__link">Thông tin</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Contact us</a>
+                    <a href="#" class="nav__link">Liên hệ</a>
                 </li>
             </ul>
 
             <div class="row">
+                <div class="col">
+                    <div class="main_nav_content" style="display: flex; flex-direction: row">
+                <?php if(isset($_SESSION['login'])) : $u = $_SESSION['login']; ?>
+                    <div class="top_bar_user">
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">
+                                <div class="user_icon"><img src="./image/user.svg" alt=""></div>
+                                <?php echo $u['name']; ?>
+                                <b class="fas fa-angle-down"></b></a>
+                            <div class="dropdown-content">
+                                <a href="?action=logout"><i class="fas fa-sign-out-alt" style="margin: 10px;"></i>Log out</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="top_bar_user">
+                        <div class="nav__button">
+                            <a href="/login" class="nav__button-signup" >Đăng ký</a>
+                            <a href="/login" class="nav__button-signin">Đăng nhập</a>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-                <div class="nav__button">
-                    <a href="#" class="nav__button-signup">Sign up</a>
-                    <a href="#" class="nav__button-signin">Sign in</a>
-                </div>
+                    </div>
+                    </div>
             </div>
 
 
@@ -88,12 +111,13 @@ include '../config/cart.php';
                 <div class="banner_product_image"><img src="./image/<?= $pr['image'] ?>" alt=""></div>
                 <div class="header__description">
                     <div class="banner_content">
-                        <h1 class="banner_text">new era of smartphones</h1>
+                        <h1 class="banner_text">Sản phẩm bán chạy</h1>
                         <div class="banner_price"><span>$ <?= $pr['price'] ?></span>$<?= $pr['sale_price'] ?></div>
                         <div class="banner_product_name"><?= $pr['name'] ?></div>
-                        <div class="button banner_button"><a href="process-cart.php?id=<?= $pr['id'] ?>">Shop Now</a></div>
+                        <div class="button banner_button"><a href="process-cart.php?id=<?= $pr['id'] ?>">Mua ngay</a></div>
                     </div>
                 </div>
+
         </div>
 
 <!--        <div class="header__title">-->
@@ -113,26 +137,13 @@ include '../config/cart.php';
             <div class="header_main">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 col-12 text-right">
+                        <div class="col-lg-7 col-12 text-right">
                             <div class="header_search">
                                 <div class="header_search_content">
                                     <div class="header_search_form_container">
-                                        <form action="search.php" class="header_search_form clearfix" method="GET">
-                                            <input type="search" required="required" class="header_search_input" placeholder="Search for products..." name="search">
-                                            <div class="custom_dropdown">
-                                                <div class="custom_dropdown_list">
-                                                    <span class="custom_dropdown_placeholder clc">All Categories</span>
-                                                    <i class="fas fa-chevron-down"></i>
-                                                    <ul class="custom_list clc">
-                                                        <li><a class="clc" href="#">All Categories</a></li>
-                                                        <li><a class="clc" href="#">Computers</a></li>
-                                                        <li><a class="clc" href="#">Laptops</a></li>
-                                                        <li><a class="clc" href="#">Cameras</a></li>
-                                                        <li><a class="clc" href="#">Hardware</a></li>
-                                                        <li><a class="clc" href="#">Smartphones</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                        <form action="/?action=products" class="header_search_form clearfix" method="post">
+                                            <input type="hidden"  name="id" value="<?= $id?>">
+                                            <input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm sản phẩm..." name="name">
                                             <button type="submit" class="header_search_button trans_300"><img src="./image/search.png" alt=""></button>
                                         </form>
                                     </div>
@@ -151,16 +162,19 @@ include '../config/cart.php';
 
                                 <!-- Cart -->
                                 <div class="cart">
-                                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: end">
-                                        <div style="position: relative;" class="cart_icon">
-                                            <img src="./image/cart.png" alt="">
-                                            <div class="cart_count"><span><?php echo tong_so_luong(); ?></span></div>
+                                    <a href="?action=cart">
+                                        <div style="display: flex; flex-direction: row; align-items: center; justify-content: end">
+                                            <div style="position: relative;" class="cart_icon">
+                                                <img src="./image/cart.png" alt="">
+                                                <div class="cart_count"><span><?php echo tong_so_luong(); ?></span></div>
+                                            </div>
+                                            <div class="cart_content">
+                                                <div class="cart_text"><a>Cart</a></div>
+                                                <div class="cart_price">$<?php echo tong_tien(); ?></div>
+                                            </div>
                                         </div>
-                                        <div class="cart_content">
-                                            <div class="cart_text"><a href="cart.php">Cart</a></div>
-                                            <div class="cart_price">$<?php echo tong_tien(); ?></div>
-                                        </div>
-                                    </div>
+                                    </a>
+
                                 </div>
                             </div>
                             </div>
@@ -178,7 +192,7 @@ include '../config/cart.php';
 
     </section>
 
-    <section class="subscribe">
+    <!-- <section class="subscribe">
         <div class="subscribe__bg">
             <img src="./image/mask.png" alt="img" />
         </div>
@@ -206,7 +220,7 @@ include '../config/cart.php';
             </div>
         </form>
     </section>
-</main>
+</main> -->
 
 <!--<div class="container">-->
 <!--    <div class="row">-->
@@ -272,7 +286,9 @@ include '../config/cart.php';
         <p>&copy; 2020 by Eugen Kaurov. All rights reserved. <a href="/about">Imprint (contacts)</a></p>
     </footer>
 <!--</div>-->
-<?php /* = $this->inlineScript() */ ?>
-<script src="./js/main.js"></script>
+
+<?php
+/* = $this->inlineScript() */ ?>
+
 </body>
 </html>
