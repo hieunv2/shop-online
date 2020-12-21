@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/schema.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/schema.mysql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Layout/authLayout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layout/authLayout.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/admin/listOrders.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/admin/listOrders.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +51,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SCSS" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -97,7 +93,7 @@
       <workItem from="1608000370506" duration="8553000" />
       <workItem from="1608193917047" duration="449000" />
       <workItem from="1608260532774" duration="12055000" />
-      <workItem from="1608472947547" duration="33564000" />
+      <workItem from="1608472947547" duration="34145000" />
     </task>
     <task id="LOCAL-00001" summary="#02 restructure + use namespaces">
       <created>1599130779406</created>
@@ -152,10 +148,11 @@
     </state>
     <state x="758" y="416" key="NewPhpFileDialog/0.23.1920.962@0.23.1920.962" timestamp="1608473275883" />
     <state x="758" y="416" key="NewPhpFileDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608491657071" />
-    <state x="353" y="55" key="SettingsEditor" timestamp="1607827868016">
+    <state x="353" y="55" key="SettingsEditor" timestamp="1608526061096">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="353" y="55" key="SettingsEditor/0.23.1920.962@0.23.1920.962" timestamp="1607827868016" />
+    <state x="353" y="55" key="SettingsEditor/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608526061096" />
     <state x="491" y="129" width="1720" height="762" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1607870054308">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
