@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/admin/listOrders.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/admin/listOrders.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AdminView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AdminView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/admin/listCategories.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/admin/listCategories.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +96,7 @@
       <workItem from="1608000370506" duration="8553000" />
       <workItem from="1608193917047" duration="449000" />
       <workItem from="1608260532774" duration="12055000" />
-      <workItem from="1608472947547" duration="34145000" />
+      <workItem from="1608472947547" duration="34957000" />
     </task>
     <task id="LOCAL-00001" summary="#02 restructure + use namespaces">
       <created>1599130779406</created>

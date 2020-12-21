@@ -137,9 +137,25 @@ switch ($routeAction) {
         $action = 'addUser';
         break;
 
+    case '/add_category':
+        $controllerName = CategoryController::class;
+        $action = 'addCategory';
+        break;
+
     case 'createUser':
         $controllerName = AuthController::class;
         $action = 'createUser';
+        break;
+
+    case 'createCategory':
+        $controllerName = CategoryController::class;
+        $action = 'createCategory';
+        break;
+
+    case 'deleteCategory':
+    case '/deleteCategory':
+        $controllerName = CategoryController::class;
+        $action = 'deleteCategory';
         break;
 
     case '/list_users':

@@ -40,6 +40,34 @@ class CategoryController implements ControllerInterface
     }
 
 
+
+    public function addCategory($request) {
+        $View = new AdminView();
+        $View->renderAddCategory();
+    }
+
+    public function createCategory($request){
+        if (!empty($_POST)) {
+            $name = $_POST['name'];
+            $status = $_POST['status'];
+            $sql = "INSERT INTO category(name,status) VALUES('$name','$status')";
+            if ($this->db->query($sql)) {
+                header('location:/list_categories');
+            }
+        }
+    }
+
+    public function deleteCategory($request) {
+        $id = isset($_GET['id']) ? $_GET['id'] : 0;
+
+        if ($this->db->query("DELETE FROM category WHERE id=$id")) {
+            header('location: /list_categories');
+        }else{
+            echo "Lỗi xoá sản phẩm";
+        }
+    }
+
+
     public function aboutAction()
     {
         $View = new BlogView($this->blogManager);

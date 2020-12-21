@@ -20,7 +20,7 @@ $cats = isset($variables) ? $variables : [];
                         <input class="form-control" name="search_name" placeholder="Nhập tên tìm kiếm...">
                     </div>
                     <button type="submit" class="btn btn-primary">Tìm</button>
-                    <a href="category-add.php" class="btn btn-success">Thêm mới</a>
+                    <a href="/add_category" class="btn btn-success">Thêm mới</a>
                 </form>
             </div>
             <div class="box-body">
@@ -52,7 +52,7 @@ $cats = isset($variables) ? $variables : [];
                             </td>
                             <td>
                                 <a href="category-edit.php?id=<?php echo $cat['id']; ?>" class="btn btn-xs btn-success">Sửa</a>
-                                <a href="category-delete.php?id=<?php echo $cat['id']; ?>" class="btn btn-xs btn-danger" onclick="return confirm('bạn có chắc không')">Xóa</a>
+                                <a href="/?action=deleteCategory&id=<?php echo $cat['id']; ?>" class="btn btn-xs btn-danger" onclick="return confirm('bạn có chắc không')">Xóa</a>
                             </td>
                         </tr>
                     <?php } ?>

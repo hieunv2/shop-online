@@ -85,6 +85,12 @@ class AdminView
         $this->content2 = \ob_get_clean();
     }
 
+    public function renderAddCategory(){
+        \ob_start();
+        require "../src/View/admin/addCategory.phtml";
+        $this->content2 = \ob_get_clean();
+    }
+
     public function renderEditProduct($variables = null) {
         \ob_start();
         require "../src/View/admin/editProduct.phtml";
