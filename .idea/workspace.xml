@@ -3,21 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/schema.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/schema.mysql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CmsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/BlogManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BlogManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/UserManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/BlogView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/BlogView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Layout/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layout/layout.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/auth/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/auth/login.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/blog/list.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/blog/list.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/blog/post.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/blog/post.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Layout/authLayout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layout/authLayout.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +97,7 @@
       <workItem from="1608000370506" duration="8553000" />
       <workItem from="1608193917047" duration="449000" />
       <workItem from="1608260532774" duration="12055000" />
-      <workItem from="1608472947547" duration="32648000" />
+      <workItem from="1608472947547" duration="33564000" />
     </task>
     <task id="LOCAL-00001" summary="#02 restructure + use namespaces">
       <created>1599130779406</created>
@@ -179,6 +169,10 @@
     </state>
     <state x="551" y="298" key="com.intellij.ide.util.TipDialog/0.23.1920.962@0.23.1920.962" timestamp="1608473017256" />
     <state x="551" y="298" key="com.intellij.ide.util.TipDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1607922511527" />
+    <state x="726" y="410" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608525398193">
+      <screen x="0" y="23" width="1920" height="962" />
+    </state>
+    <state x="726" y="410" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608525398193" />
     <state x="569" y="197" width="781" height="614" key="find.popup" timestamp="1607878851151">
       <screen x="0" y="23" width="1920" height="962" />
     </state>

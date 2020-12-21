@@ -139,35 +139,6 @@ a[aria-expanded="true"] {
     }
 }
 
-@font-face {
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 400;
-    font-display: auto;
-    src: url("../font/Lato-Regular.eot");
-    src: url("../font/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Regular.woff") format("woff"), url("../font/Lato-Regular.ttf") format("truetype");
-}
-
-body,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6,
-p,
-a,
-td {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-}
-
 body {
     width: 100%;
     height: 100%;
@@ -748,9 +719,6 @@ body {
  */
 .content-wrapper,
 .main-footer {
-    -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-    -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-    -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
     margin-left: 230px;
     z-index: 820;

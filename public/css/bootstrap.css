@@ -929,3 +929,33 @@
     -ms-flex-pack: end !important;
     justify-content: flex-end !important;
 }
+
+
+.btn {
+    transition: none;
+}
+
+
+.btn:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+.btn {
+    transition: none;
+}
+
+
+.btn:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+.btn {
+    transition: none;
+}
+
+.btn:hover {
+    color: #212529;
+    text-decoration: none;
+}
