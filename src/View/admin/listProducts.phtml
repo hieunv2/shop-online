@@ -2,7 +2,7 @@
 include '../config/connect.php';
 $products = isset($variables) ? $variables : [];
 $pages = isset($pages) ? $pages : 1;
-$page=isset($_GET['page']) ? $_GET['page'] : 1;
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
 ?>
 
 <div class="content-wrapper">
@@ -39,7 +39,7 @@ $page=isset($_GET['page']) ? $_GET['page'] : 1;
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($products as $pro) { ?>
+                    <?php foreach ($products as $pro) { ?>
                         <tr>
                             <td><?php echo $pro['id'] ?></td>
                             <td>
@@ -48,32 +48,49 @@ $page=isset($_GET['page']) ? $_GET['page'] : 1;
                             <td><?php echo $pro['name'] ?></td>
                             <td><?php echo $pro['cat_name'] ?></td>
                             <td>
-                                <?php if($pro['status'] == 1) : ?>
+                                <?php if ($pro['status'] == 1) : ?>
                                     <span>Hiển thị</span>
                                 <?php else: ?>
                                     <span>Ẩn</span>
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <?php echo date('d-m-Y',strtotime($pro['created_at'])) ?>
+                                <?php echo date('d-m-Y', strtotime($pro['created_at'])) ?>
                             </td>
                             <td>
-                                <a href="/?action=editProduct&id=<?php echo $pro['id']; ?>" class="btn btn-xs btn-success">Sửa</a>
-                                <a href="/?action=deleteProduct&id=<?php echo $pro['id']; ?>" class="btn btn-xs btn-danger" onclick="return confirm('bạn có chắc không')">Xóa</a>
+                                <a href="/?action=editProduct&id=<?php echo $pro['id']; ?>"
+                                   class="btn btn-xs btn-success">Sửa</a>
+                                <a href="/?action=deleteProduct&id=<?php echo $pro['id']; ?>"
+                                   class="btn btn-xs btn-danger" onclick="return confirm('bạn có chắc không')">Xóa</a>
                             </td>
                         </tr>
                     <?php } ?>
                     </tbody>
                 </table>
-                <nav aria-label="Page navigation example" style="text-align: center">
-                    <ul class="pagination ">
-                        <li class="page-item"><a class="page-link" href="?page=<?= ($page-1) ?>">Previous</a></li>
-                        <?php for ($p = 1; $p <= $pages ; $p++) { ?>
-                            <li class="page-item <?php if ($p==$page) { echo 'active'; } ?>"><a class="page-link" href="?page=<?= $p ?>"><?= $p ?></a></li>
+                <div aria-label="Page navigation example" style="text-align: center">
+                    <ul style=" list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;" class="pagination ">
+                        <li style="float: left;" class="page-item"><a style="display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;" class="page-link" href="?page=<?= ($page - 1) ?>">Previous</a></li>
+                        <?php for ($p = 1; $p <= $pages; $p++) { ?>
+                            <li style="float: left;" class="page-item"><a style="display: block; color: <?php if ($p == $page) {
+                                    echo 'red';
+                                } ?>;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;" href="?page=<?= $p ?>"><?= $p ?></a></li>
                         <?php } ?>
-                        <li class="page-item"><a class="page-link" href="?page=<?= ($page+1) ?>">Next</a></li>
-                    </ul>
-                </nav>
+                        <li style="float: left;" class="page-item"><a style="display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;" href="?page=<?= ($page + 1) ?>">Next</a></li>
+                        </ul>
+                </div>
             </div>
         </div>
         <!-- /.box -->

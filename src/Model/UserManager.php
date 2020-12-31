@@ -1,6 +1,6 @@
 <?php
 
-class UserManager
+class UserManager extends BaseModal
 {
 
     /**
@@ -8,9 +8,11 @@ class UserManager
      */
     private $db;
 
+    private $name;
 
-    public function __construct($dbConnection)
+    public function __construct($dbConnection, $name)
     {
+        $this->$name = $name;
         if ($dbConnection instanceof \mysqli) {
             $this->db = $dbConnection;
         } else {
@@ -49,7 +51,7 @@ class UserManager
             . "SELECT * "
             . "FROM users "
             . "WHERE email = '%s' AND password = '%s'";
-        $query = \sprintf($query, $this->db->real_escape_string($email), $this->db->real_escape_string($password));
+        $query = \sprintf($query, $this->db->real_escape_string($email), $this->db->real_escape_string($this->getHash($password)));
         if ($result = $this->db->query($query)) {
             $row = $result->fetch_assoc();
             if (!$row) {

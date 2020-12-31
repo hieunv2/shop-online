@@ -125,8 +125,7 @@ class AuthController implements ControllerInterface
             $phone=$_POST['phone'];
             $birthday=$_POST['birthday'];
             $address=$_POST['address'];
-            $password=$_POST['password'];
-            $confirm_password=$_POST['confirm_password'];
+            $password=\hash('sha512', $this->db->real_escape_string($_POST['password']));
             $sql="INSERT INTO users(name,username,email,phone,birthday,address,password,group_name,image) VALUES('$name','$username','$email','$phone','$birthday','$address','$password','admin','$image')";
             if ($this->db->query($sql)) {
                 header('location:/list_users');

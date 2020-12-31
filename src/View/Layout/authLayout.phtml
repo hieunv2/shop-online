@@ -9,90 +9,81 @@ ob_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="./fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-    <link href="./css/bootstrap4/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
     <link href="./css/admin.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="./css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
-
-<!--    <link href="assets/vendor/chartsjs/Chart.min.css" rel="stylesheet">-->
-<!--    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">-->
+    <link href="./css/bs.css" media="screen" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 <div class="wrapper">
-    <nav id="sidebar" class="active">
-        <div class="sidebar-header">
-            <img src="assets/img/bootstraper-logo.png" alt="bootraper logo" class="app-logo">
-        </div>
-        <ul class="list-unstyled components text-secondary">
-            <li>
-                <a href="/admin"><i class="fas fa-home"></i> Dashboard</a>
-            </li>
-            <li>
-                <a href="/list_users"  class="no-caret-down"><i class="fas fa-user"></i> Quản lý tài khoản</a>
-                <ul style="margin-left: 40px;" class=" list-unstyled dropdown-content" >
-                    <li>
-                        <a href="/list_users"><i class="fas fa-angle-right"></i> Danh sách nhân viên</a>
-                    </li>
-                    <li>
-                        <a href="/add_user"><i class="fas fa-angle-right"></i> Thêm nhân viên</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="/list_products"  class="no-caret-down"><i class="fas fa-credit-card"></i> Quản lý sản phẩm</a>
-                <ul style="margin-left: 40px;" class=" list-unstyled dropdown-content" >
-                    <li>
-                        <a href="/list_products"><i class="fas fa-angle-right"></i> Danh sách sản phẩm</a>
-                    </li>
-                    <li>
-                        <a href="/add_product"><i class="fas fa-angle-right"></i> Thêm sản phẩm</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="/list_orders"  class="no-caret-down"><i class="fas fa-bath"></i> Quản lý đơn hàng</a>
-            </li>
-            <li>
-                <a href="/list_customers"  class="no-caret-down"><i class="fas fa-users"></i> Quản lý khách hàng</a>
-            </li>
-            <li>
-                <a href="/list_categories"  class="no-caret-down"><i class="fas fa-bars"></i> Quản lý danh mục</a>
-            </li>
-        </ul>
-    </nav>
-    <div id="body" class="active">
-        <nav class="navbar navbar-expand-lg navbar-white bg-white">
-            <button type="button" id="sidebarCollapse" class="btn btn-light"><i class="fas fa-bars"></i><span></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav ml-auto">
-                    <?php if(isset($_SESSION['login'])) : $u = $_SESSION['login']; ?>
-                        <div class="top_bar_user">
-                            <div class="dropdown">
-                                <a href="#" class="dropbtn">
-                                    <!--                                    <div class="user_icon"><img src="./image/user.svg" alt=""></div>-->
-                                    <?php echo $u['name']; ?>
-                                    <b class="fas fa-angle-down"></b></a>
-                                <div class="dropdown-content">
-                                    <a href="?action=logout"><i class="fas fa-sign-out-alt" style="margin: 10px;"></i>Log out</a>
-                                </div>
+    <div id="body">
+        <div class="row" style="background-color: white; height: 80px;flex-direction: row; justify-content: space-between">
+            <div class="sidebar-header">
+                <img src="./image/logo.png" style="width: 80px;height: 80px;margin-left: 40px;" alt="bootraper logo" class="app-logo">
+            </div>
+            <div style="margin-top: 20px;">
+                <?php if(isset($_SESSION['login'])) : $u = $_SESSION['login']; ?>
+                    <div class="top_bar_user" style="float: right; margin-right: 50px;">
+
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">
+                                <!--                                    <div class="user_icon"><img src="./image/user.svg" alt=""></div>-->
+                                <?php echo $u['name']; ?>
+                                <b class="fas fa-angle-down"></b></a>
+                            <div class="dropdown-content">
+                                <a href="?action=logout"><i class="fas fa-sign-out-alt" style="margin: 10px;"></i>Log out</a>
                             </div>
                         </div>
-                    <?php endif; ?>
-                </ul>
+                    </div>
+                <?php endif; ?>
             </div>
-        </nav>
-        <div class="content">
-         <?=  $this->content2; ?>
+        </div>
+        <div>
+                <div class="row">
+                    <div class="col-3" id="sidebar">
+                        <ul class="list-unstyled components text-secondary">
+                            <li>
+                                <a href="/admin"><i class="fas fa-home"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="/list_users"  class="no-caret-down"><i class="fas fa-user"></i> Quản lý tài khoản</a>
+                                <ul style="margin-left: 40px;" class=" list-unstyled dropdown-content" >
+                                    <li>
+                                        <a href="/list_users"><i class="fas fa-angle-right"></i> Danh sách nhân viên</a>
+                                    </li>
+                                    <li>
+                                        <a href="/add_user"><i class="fas fa-angle-right"></i> Thêm nhân viên</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/list_products"  class="no-caret-down"><i class="fas fa-credit-card"></i> Quản lý sản phẩm</a>
+                                <ul style="margin-left: 40px;" class=" list-unstyled dropdown-content" >
+                                    <li>
+                                        <a href="/list_products"><i class="fas fa-angle-right"></i> Danh sách sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="/add_product"><i class="fas fa-angle-right"></i> Thêm sản phẩm</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/list_orders"  class="no-caret-down"><i class="fas fa-bath"></i> Quản lý đơn hàng</a>
+                            </li>
+                            <li>
+                                <a href="/list_customers"  class="no-caret-down"><i class="fas fa-users"></i> Quản lý khách hàng</a>
+                            </li>
+                            <li>
+                                <a href="/list_categories"  class="no-caret-down"><i class="fas fa-bars"></i> Quản lý danh mục</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-9"><?=  $this->content2; ?></div>
+
+                </div>
     </div>
 </div>
-    <script type="text/javascript" src="./js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-    <script>
-        $('#sidebarCollapse').on('click', function() {
-            $('#sidebar').toggleClass('active');
-            $('#body').toggleClass('active');
-        });
-    </script>
+
+
 </body>
 
 </html>

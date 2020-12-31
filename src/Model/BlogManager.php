@@ -1,6 +1,6 @@
 <?php
 
-class BlogManager
+class BlogManager extends BaseModal
 {
 
     /**
@@ -8,9 +8,12 @@ class BlogManager
      */
     private $db;
 
+    private $name;
 
-    public function __construct($dbConnection)
+
+    public function __construct($dbConnection, $name)
     {
+        $this->$name = $name;
         if ($dbConnection instanceof mysqli) {
             $this->db = $dbConnection;
         } else {
@@ -23,12 +26,11 @@ class BlogManager
      * Get all posts with status 'published' from the database
      * @return array
      */
-    public function findAllProducts()
+    public function findAllProducts($start)
     {
+        $limit=20;
         $products = [];
-        $query = ""
-            . "SELECT *"
-            . "FROM product";
+        $query = "SELECT p.*,c.name as 'cat_name' FROM product p JOIN category c ON p.category_id = c.id  ORDER BY id ASC LIMIT $start,$limit";
         $result = $this->db->query($query);
         if ($result) {
             // Cycle through results

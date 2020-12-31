@@ -352,7 +352,7 @@ CREATE TABLE `users`
     `address`    varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `gender`     tinyint(4)                              DEFAULT '' 1 '',
     `birthday`   date                                    DEFAULT NULL,
-    `password`   varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `password`   varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
     `group_name` varchar(50) COLLATE utf8mb4_unicode_ci  DEFAULT '' customer '',
     `created_at` datetime                                DEFAULT CURRENT_TIMESTAMP
 ) ENGINE = InnoDB
@@ -365,7 +365,7 @@ CREATE TABLE `users`
 
 INSERT INTO `users` (`id`, `username`, `name`, `email`, `phone`, `image`, `address`, `gender`, `birthday`, `password`,
                      `group_name`, `created_at`)
-VALUES (1, ''admin'', ''Nguyễn Hoàng Trung'', ''admin_1tech@gmail.com'', ''01234260199'', '''', ''Nghệ An'', 1, ''1999-01-26'', ''admin'', ''admin'', ''2018-08-09 00:36:08''),
+VALUES (1, ''admin'', ''Nguyễn Hoàng Trung'', ''admin_1tech@gmail.com'', ''01234260199'', '''', ''Nghệ An'', 1, ''1999-01-26'', ''c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec'', ''admin'', ''2018-08-09 00:36:08''),
        (3, ''hoangtrung9937'', ''Hoàng Trung'', ''trung9937@gmail.com'', ''01684693524'', '''', ''Nghệ An'', 1, ''1999-01-26'', ''trung9937'', ''customer'', ''2018-08-09 13:42:49''),
        (6, ''phucmnp11'', ''Mai Nhân phúc'', ''phucmnp@gmail.com'', ''0968608169'', '''', ''Thái Thụy, Thái Bình'', 1, ''1999-05-01'', ''123456'', ''admin'', ''2018-08-22 21:06:35'');
 

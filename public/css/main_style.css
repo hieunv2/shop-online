@@ -1026,3 +1026,80 @@ p.text-muted {
 .dropdown:hover .dropbtn {
   color: #0e8ce4;
 }
+
+
+.footer
+{
+  background-color: lightblue;
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+.footer .logo_container
+{
+  height: auto;
+  margin-bottom: 18px;
+  margin-top: -10px;
+}
+.footer .logo
+{
+  top: auto;
+  transform: none;
+}
+.footer .logo a
+{
+  color: #000000;
+}
+.footer_title
+{
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+}
+.footer_phone
+{
+  font-size: 18px;
+  font-weight: 500;
+  color: #0e8ce4;
+  margin-top: 13px;
+}
+.footer_contact_text
+{
+  margin-top: 10px;
+}
+.footer_contact_text p
+{
+  margin-bottom: 0px;
+}
+
+.footer_subtitle
+{
+  font-size: 12px;
+  color: #000000;
+}
+.footer_column ul:first-of-type
+{
+  margin-top: 21px;
+}
+.footer_column ul
+{
+  margin-top: 7px;
+}
+.footer_list li
+{
+  margin-bottom: 6px;
+}
+.footer_list li a
+{
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.4);
+  transition: all 200ms ease;
+}
+.footer_list li a:hover
+{
+  color: #0e8ce4;
+}
+.footer_list_2
+{
+  margin-top: 42px !important;
+}

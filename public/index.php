@@ -1,6 +1,7 @@
 <?php
 // Retrieve configuration
 $appConfig = require __DIR__ . '/../config/application.config.php';
+require  __DIR__ . '/../vendor/autoload.php';
 
 // the Application initialisation/entry point.
 $routeAction = $_SERVER["REQUEST_URI"];
@@ -35,6 +36,17 @@ switch ($routeAction) {
         $controllerName = OrderController::class;
         $action = 'createOrderAction';
         break;
+
+    case '/blogs':
+    case 'blogs':
+        $controllerName = BlogController::class;
+        $action = 'blogAction';
+        break;
+    case '/blog':
+    case 'blog':
+        $controllerName = BlogController::class;
+        $action = 'blogViewAction';
+        break;
     case '/about':
     case 'about':
         $controllerName = CategoryController::class;
@@ -43,32 +55,32 @@ switch ($routeAction) {
 
     case 'products':
     case '/products':
-        $controllerName = 'BlogController';
+        $controllerName = BlogController::class;
         $action = 'getProducts';
         break;
 
     case 'product':
-        $controllerName = 'BlogController';
+        $controllerName = BlogController::class;
         $action = 'postAction';
         break;
 
     case 'addpost':
-        $controllerName = 'BlogController';
+        $controllerName = BlogController::class;
         $action = 'addAction';
         break;
 
     case 'addpostsubmitted':
-        $controllerName = 'BlogController';
+        $controllerName = BlogController::class;
         $action = 'addpostsubmittedAction';
         break;
 
     case 'addcomment':
-        $controllerName = 'BlogController';
+        $controllerName = BlogController::class;
         $action = 'addcommentAction';
         break;
 
     case 'addcommentsubmitted':
-        $controllerName = 'BlogController';
+        $controllerName = BlogController::class;
         $action = 'addcommentsubmittedAction';
         break;
 
@@ -113,6 +125,18 @@ switch ($routeAction) {
     case '/editProduct':
         $controllerName = BlogController::class;
         $action = 'editProduct';
+        break;
+
+    case 'editOrder':
+    case '/editOrder':
+        $controllerName = OrderController::class;
+        $action = 'editOrder';
+        break;
+
+    case 'updateOrder':
+    case '/updateOrder':
+        $controllerName = OrderController::class;
+        $action = 'updateOrder';
         break;
 
     case 'updateProduct':
@@ -181,6 +205,7 @@ switch ($routeAction) {
         $action = 'listOrders';
         break;
 
+    default:
     case 'list':
     case '/':
         $controllerName = 'BlogController';
@@ -188,7 +213,6 @@ switch ($routeAction) {
         break;
 
     case '/list_products':
-    default:
         $controllerName = BlogController::class;
         $action = 'listProducts';
         break;
@@ -199,6 +223,7 @@ switch ($routeAction) {
 require '../src/Controller/ControllerInterface.php';
 require '../src/Controller/' . $controllerName . '.php';
 require '../src/Model/DbConnectionManager.php';
+require '../src/Model/BaseModal.php';
 require '../src/Model/BlogManager.php';
 require '../src/Model/UserManager.php';
 require '../src/Model/CartManager.php';
@@ -213,9 +238,9 @@ $dbConnection = null;
 if ($db) {
     $dbConnection = $db->getConnection();
 }
-$blogManager = new BlogManager($dbConnection);
-$userManager = new UserManager($dbConnection);
-$cartManager = new CartManager($dbConnection);
+$blogManager = new BlogManager($dbConnection, "product");
+$userManager = new UserManager($dbConnection, "user");
+$cartManager = new CartManager($dbConnection, "cart");
 
 
 $controller = new $controllerName($blogManager, $userManager, $cartManager, $dbConnection);

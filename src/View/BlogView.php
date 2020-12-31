@@ -22,12 +22,27 @@ class BlogView
     }
 
 
-    public function renderView($variables = null)
+    public function renderView($variables = null,$pages)
     {
         \ob_start();
         require "../src/View/{$this->controller}/{$this->action}.phtml";
         $this->content = \ob_get_clean();
     }
+
+    public function renderBlogs()
+    {
+        \ob_start();
+        require "../src/View/blog/blogs.phtml";
+        $this->content = \ob_get_clean();
+    }
+
+    public function renderBlog()
+    {
+        \ob_start();
+        require "../src/View/blog/blogDetail.phtml";
+        $this->content = \ob_get_clean();
+    }
+
 
     public function renderProducts($variables = null)
     {

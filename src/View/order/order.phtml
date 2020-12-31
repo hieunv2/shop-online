@@ -127,14 +127,6 @@ if (isset($_SESSION['login'])): $u = $_SESSION['login'];?>
                                 <input type="text" class="form-control" name="address" value="<?= $u['address'] ?>">
                             </div>
                             <div class="form-group">
-                                <label>Paymens method</label>
-                                <select name="payment" class="custom-select" style="min-width: 200px;">
-                                    <option >Choose</option>
-                                    <option value="1">Payment on delivery</option>
-                                    <option value="2">Ship cod</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <div class="col-sm-10 col-sm-offset-2">
                                     <button type="submit" class="btn btn-primary" name="btn_pay">Submit</button>
                                 </div>

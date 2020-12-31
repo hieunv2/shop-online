@@ -97,6 +97,12 @@ class AdminView
         $this->content2 = \ob_get_clean();
     }
 
+    public function renderEditOrder($variables = null) {
+        \ob_start();
+        require "../src/View/admin/editOrder.phtml";
+        $this->content2 = \ob_get_clean();
+    }
+
     public function indexView()
     {
         $this->content2 = "Blog sample.

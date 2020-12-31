@@ -1,16 +1,19 @@
 <?php
 
 
-class CartManager
+class CartManager extends BaseModal
 {
     /**
      * @var mysqli
      */
     private $db;
 
+    private $name;
 
-    public function __construct($dbConnection)
+
+    public function __construct($dbConnection, $name)
     {
+        $this->$name = $name;
         if ($dbConnection instanceof mysqli) {
             $this->db = $dbConnection;
         } else {

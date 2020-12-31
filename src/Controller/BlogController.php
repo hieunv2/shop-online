@@ -39,12 +39,26 @@ class BlogController implements ControllerInterface
         return $this->listAction($request);
     }
 
+    public function blogAction($request) {
+        $View = new BlogView($this->blogManager);
+        $View->renderBlogs();
+    }
+
+    public function blogViewAction($request) {
+        $View = new BlogView($this->blogManager);
+        $View->renderBlog();
+    }
+
     public function listAction($request)
     {
-        $products = $this->blogManager->findAllProducts();
-        $productBanner = $this->blogManager->findProductBanner();
+        $limit=20;
+        $total=$this->db->query("SELECT id FROM product")->num_rows;
+        $pages=ceil($total/$limit);
+        $page=isset($_GET['page']) ? $_GET['page'] : 1;
+        $start=($page-1)*$limit;
+        $products = $this->blogManager->findAllProducts($start);
         $View = new BlogView($this->blogManager);
-        $View->renderView($products, $productBanner);
+        $View->renderView($products, $pages);
     }
 
     public function listProducts($request)

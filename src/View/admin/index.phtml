@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+        <div class="col-sm-6 col-md-6 col-lg-3">
             <div class="card">
                 <div class="content">
                     <div class="row">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-sm-8">
                             <div class="detail">
-                                <p class="detail-subtitle">New Orders</p>
+                                <p class="detail-subtitle">Số đơn hàng</p>
                                 <span class="number"> <?= $od_total ?></span>
                             </div>
                         </div>
@@ -46,13 +46,13 @@
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="fas fa-calendar"></i> For this Week
+                            <i class="fas fa-arrow-right"></i> Xem chi tiết
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+        <div class="col-sm-6 col-md-6 col-lg-3">
             <div class="card">
                 <div class="content">
                     <div class="row">
@@ -63,7 +63,7 @@
                         </div>
                         <div class="col-sm-8">
                             <div class="detail">
-                                <p class="detail-subtitle">Revenue</p>
+                                <p class="detail-subtitle">Doanh thu</p>
                                 <h3>$<?php echo $od['total']; ?></h3>
                             </div>
                         </div>
@@ -71,38 +71,13 @@
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="fas fa-calendar"></i> For this Month
+                            <i class="fas fa-arrow-right"></i> Xem chi tiết
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-            <div class="card">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="icon-big text-center">
-                                <i class="violet fas fa-eye"></i>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="detail">
-                                <p class="detail-subtitle">Page views</p>
-                                <span class="number"><?= $p_total ?></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        <hr />
-                        <div class="stats">
-                            <i class="fas fa-stopwatch"></i> For this Month
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+        <div class="col-sm-6 col-md-6 col-lg-3">
             <div class="card">
                 <div class="content">
                     <div class="row">
@@ -113,7 +88,7 @@
                         </div>
                         <div class="col-sm-8">
                             <div class="detail">
-                                <p class="detail-subtitle">Support Request</p>
+                                <p class="detail-subtitle">Khách hàng</p>
                                 <span class="number"><?= $total ?></span>
                             </div>
                         </div>
@@ -129,4 +104,4 @@
         </div>
     </div>
 </div>
-</div>
+

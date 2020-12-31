@@ -7,39 +7,26 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
 }
 
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
 ?>
-
-<div class="wrapper__title">
-<!--    <img src="./image/Group 313.png" alt="title-icon" />-->
-</div>
-        <div>
-            <div class="row">
+<div>
+   <div class="row">
 
                 <div class="col-3">
 
-                    <!-- Shop Sidebar -->
 
                         <div >
-                            <div >Categories</div>
+                            <div style="font-size: 24px;">Categories</div>
                             <ul >
                                 <?php
                                 $cats=mysqli_query($conn, "SELECT * FROM category WHERE status = 1 ");
                                 ?>
                                 <?php foreach ($cats as $c) :  ?>
-                                    <?php if($c['id'] == $id) : ?> <li><a style="color: red" href="?action=products&&id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
-                                    <?php else: ?> <li><a href="?action=products&&id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
+                                    <?php if($c['id'] == $id) : ?> <li style="margin-top: 20px;"><a style="color: red; font-size: 20px;" href="?action=products&&id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
+                                    <?php else: ?> <li style="margin-top: 20px;"><a style="font-size: 20px;" href="?action=products&&id=<?php echo $c['id']; ?>"><?php echo $c['name']; ?></a></li>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
-                        </div>
-                        <div >
-                            <div >Filter By</div>
-                            <div>Price</div>
-                            <div >
-                                <div id="slider-range" class="slider_range"></div>
-                                <p>Range: </p>
-                                <p><input type="text" id="amount" class="amount" readonly style="border:0; font-weight:bold;"></p>
-                            </div>
                         </div>
 
                 </div>
@@ -53,6 +40,7 @@ if(isset($_GET['id'])){
                         $is_mini_mode = true;
                         $escapeHtml = 'htmlspecialchars';
                         $products = isset($variables) ? $variables : [];
+                        $pages = isset($pages) ? $pages : 1;
 
                         if(count($products) == 0) {
                             ?> <div>
@@ -92,8 +80,30 @@ if(isset($_GET['id'])){
                         }
                         ?>
                     </ul>
+                    <div aria-label="Page navigation example" style="text-align: center">
+                        <ul style=" list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ s" class="pagination ">
+                            <li style="float: left;" class="page-item"><a style="display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;" class="page-link" href="?page=<?= ($page - 1) ?>">Previous</a></li>
+                            <?php for ($p = 1; $p <= $pages; $p++) { ?>
+                                <li style="float: left;" class="page-item"><a style="display: block; color: <?php if ($p == $page) {
+                                        echo 'red';
+                                    } ?>;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;" href="?page=<?= $p ?>"><?= $p ?></a></li>
+                            <?php } ?>
+                            <li style="float: left;" class="page-item"><a style="display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;" href="?page=<?= ($page + 1) ?>">Next</a></li>
+                            </ul>
+                    </div>
                 </div>
             </div>
-
-    <a href="#" class="view-all">View all</a>
-</div>
+ </div>

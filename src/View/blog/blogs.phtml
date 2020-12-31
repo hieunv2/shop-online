@@ -1,0 +1,28 @@
+<?php
+include '../config/connect.php';
+?>
+
+<div class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a style="text-decoration: none; color: #0e8ce4" href="/blog">
+                    <div class="blog_posts" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
+                        <!-- Blog post -->
+                        <?php
+                        $post=mysqli_query($conn,"SELECT * FROM post ");
+                        foreach ($post as $p) :
+                            ?>
+                            <div class="blog_post">
+                                <div class="blog_image" style="background-image:url(./image/<?= $p['image'] ?>)"></div>
+                                <div class="blog_text"><?= $p['name'] ?></div>
+<!--                                <div class="blog_button" ><a href="#">Continue Reading</a></div>-->
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

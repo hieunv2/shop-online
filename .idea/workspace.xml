@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="">
+    <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="#02 refactoring: folders naming, use interfaces, auto installing on the 1st run if server is configured,  sha512 password hashing">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BlogNoFrameworkMVC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BlogNoFrameworkMVC.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/schema.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/schema.mysql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap4/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap4/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap4/popper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/BlogManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BlogManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/CartManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CartManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/UserManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AdminView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AdminView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/BlogView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/BlogView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Layout/authLayout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layout/authLayout.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Layout/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Layout/layout.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/admin/addProduct.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/admin/addProduct.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/admin/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/admin/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/admin/listOrders.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/admin/listOrders.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/admin/listProducts.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/admin/listProducts.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/auth/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/auth/login.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/blog/list.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/blog/list.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/order/order.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/order/order.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +38,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
@@ -34,6 +61,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/starkbank/ecdsa" />
+      <path value="$PROJECT_DIR$/vendor/sendgrid/php-http-client" />
+      <path value="$PROJECT_DIR$/vendor/sendgrid/sendgrid" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1la9tUZDbs2Ey0MYXlgbXreilPr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,7 +88,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -96,7 +131,16 @@
       <workItem from="1608193917047" duration="449000" />
       <workItem from="1608260532774" duration="12055000" />
       <workItem from="1608472947547" duration="35752000" />
-      <workItem from="1608727486666" duration="1133000" />
+      <workItem from="1608727486666" duration="9830000" />
+      <workItem from="1608741968593" duration="11000" />
+      <workItem from="1608750836885" duration="222000" />
+      <workItem from="1608780000266" duration="4756000" />
+      <workItem from="1608790470747" duration="6125000" />
+      <workItem from="1608800938100" duration="1409000" />
+      <workItem from="1609119233723" duration="2275000" />
+      <workItem from="1609134629512" duration="614000" />
+      <workItem from="1609160858904" duration="241000" />
+      <workItem from="1609397564688" duration="1176000" />
     </task>
     <task id="LOCAL-00001" summary="#02 restructure + use namespaces">
       <created>1599130779406</created>
@@ -142,18 +186,24 @@
     </state>
     <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.962@0.23.1920.962" timestamp="1608475627560" />
     <state x="275" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608523114329" />
-    <state x="673" y="270" key="NewPhpClassDialog" timestamp="1608262225042">
+    <state x="87" y="23" key="CommitChangelistDialog2" timestamp="1608735322164">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
+    <state x="87" y="23" key="CommitChangelistDialog2/0.23.1920.962@0.23.1920.962" timestamp="1608735322164" />
+    <state x="673" y="269" key="NewPhpClassDialog" timestamp="1609397816349">
+      <screen x="0" y="23" width="1920" height="959" />
+    </state>
+    <state x="673" y="269" key="NewPhpClassDialog/0.23.1920.959@0.23.1920.959" timestamp="1609397816349" />
     <state x="673" y="270" key="NewPhpClassDialog/0.23.1920.962@0.23.1920.962" timestamp="1608262225042" />
     <state x="758" y="416" key="NewPhpFileDialog" timestamp="1608491657071">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="758" y="416" key="NewPhpFileDialog/0.23.1920.962@0.23.1920.962" timestamp="1608473275883" />
     <state x="758" y="416" key="NewPhpFileDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608491657071" />
-    <state x="353" y="55" key="SettingsEditor" timestamp="1608526061096">
-      <screen x="0" y="23" width="1920" height="962" />
+    <state x="388" y="40" key="SettingsEditor" timestamp="1609160891702">
+      <screen x="0" y="23" width="1920" height="959" />
     </state>
+    <state x="388" y="40" key="SettingsEditor/0.23.1920.959@0.23.1920.959" timestamp="1609160891702" />
     <state x="353" y="55" key="SettingsEditor/0.23.1920.962@0.23.1920.962" timestamp="1607827868016" />
     <state x="353" y="55" key="SettingsEditor/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608526061096" />
     <state x="491" y="129" width="1720" height="762" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1607870054308">
@@ -164,11 +214,12 @@
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="100" y="123" width="1720" height="762" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.962@0.23.1920.962" timestamp="1608273966725" />
-    <state x="551" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1608728754833">
-      <screen x="0" y="23" width="1920" height="962" />
+    <state x="551" y="297" key="com.intellij.ide.util.TipDialog" timestamp="1609160867847">
+      <screen x="0" y="23" width="1920" height="959" />
     </state>
-    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/0.23.1920.962@0.23.1920.962" timestamp="1608728754833" />
-    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1607922511527" />
+    <state x="551" y="297" key="com.intellij.ide.util.TipDialog/0.23.1920.959@0.23.1920.959" timestamp="1609160867847" />
+    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/0.23.1920.962@0.23.1920.962" timestamp="1608790477380" />
+    <state x="551" y="298" key="com.intellij.ide.util.TipDialog/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608751594894" />
     <state x="726" y="410" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608525398193">
       <screen x="0" y="23" width="1920" height="962" />
     </state>
@@ -177,10 +228,22 @@
       <screen x="0" y="23" width="1920" height="962" />
     </state>
     <state x="569" y="197" width="781" height="614" key="find.popup/0.23.1920.962@0.23.1920.962" timestamp="1607878851151" />
-    <state x="541" y="23" width="838" height="962" key="search.everywhere.popup" timestamp="1608517822399">
-      <screen x="0" y="23" width="1920" height="962" />
+    <state x="541" y="23" width="838" height="959" key="search.everywhere.popup" timestamp="1608794393279">
+      <screen x="0" y="23" width="1920" height="959" />
     </state>
+    <state x="541" y="23" width="838" height="959" key="search.everywhere.popup/0.23.1920.959@0.23.1920.959" timestamp="1608794393279" />
     <state x="541" y="23" width="838" height="962" key="search.everywhere.popup/0.23.1920.962@0.23.1920.962" timestamp="1608274602977" />
     <state x="541" y="23" width="838" height="962" key="search.everywhere.popup/1920.23.1920.1057/0.23.1920.962@0.23.1920.962" timestamp="1608517822399" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/CategoryController.php</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

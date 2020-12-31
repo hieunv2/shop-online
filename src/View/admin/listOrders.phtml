@@ -41,8 +41,10 @@ $orders = isset($variables) ? $variables : [];
                                     <span class="label label-danger">Chưa phê duyệt</span>
 
                                 <?php endif; ?>
-
-
+                            </td>
+                            <td>
+                                <a href="/?action=editOrder&id=<?php echo $od['id']; ?>"
+                                   class="btn btn-xs">Sửa</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

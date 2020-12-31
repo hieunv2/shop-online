@@ -3,7 +3,7 @@
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Đăng nhập</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Đăng kí</label>
         <div class="login-form">
-            <form class="sign-in-htm" action="/?action=loginsubmitted" method="post">
+            <form class="sign-in-htm" action="/?action=loginsubmitted"  onsubmit="return validate()" method="post">
                 <div class="group">
                     <label for="user-name-signin" class="label">Tên đăng nhập</label>
                     <input tyle="email" name="email"  type="text" class="input">
@@ -63,42 +63,44 @@
 </div>
 
 <script>
+    function validate() {
+        var result = "";
+        result += validateEmail();
+        result += validatePassword();
 
-    //Lay ten dang nhap
-    function getUserNameSignIn(val) {
-        document.getElementById("user-name-signin").innerText = val;
-        console.log(val)
-        ;
+        if (result == "") return true;
+
+        alert("Validation Result:\n\n" + result);
+        return false;
     }
-    //Lay mat khau dang nhap
-    function getPasswordSignIn(val){
-        document.getElementById("pass-type-signin").innerText=val;
-        console.log(val)
+
+
+    function validatePassword() {
+        var password = valueOf("password");
+
+        if (password.length <= 3)
+            return "Mật khẩu tối thiểu 3 kí tự\n";
+
+        return "";
     }
-    //SUBMIT DAng nhap va mat khau
-    function submitFormSignIn(){
-        alert("form da submit")
+
+    function checkEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     }
-    //lay ten dang ki
-    function getUserNameSignUp(val){
-        document.getElementById("user-name-signup").innerText = val;
-        console.log(val)
+
+    function validateEmail() {
+        var email = valueOf("email");
+
+
+        if (!checkEmail(email))
+            return "Email không đúng định dạng\n";
+
+        return "";
     }
-    //lay mat khau dang ky
-    function getPasswordSignUp(val){
-        document.getElementById("pass-type-signup").innerText=val;
-        console.log(val)
+
+    function valueOf(name) {
+        return document.getElementsByName(name)[0].value;
     }
-    //lay dia chi Email
-    function getEmailAdress(val){
-        document.getElementById("email-address").innerText=val;
-        console.log(val)
-    }
-    //lay dia chi Email
-    function getPhoneNumber(val){
-        document.getElementById("phone-number").innerText=val;
-        console.log(val)
-    }
-    //Submit Form đăng kí
 
 </script>
